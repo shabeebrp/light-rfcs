@@ -75,6 +75,7 @@ tokenRequest.setEnableHttp2(true);
 Result<Jwt> result = TokenManager.getInstance().getJwt(key, tokenRequest);
 ```
 
+In addition, the client module should also support the custom claim, and the user can add an encoded custom claim to their request header by using Base64Encoder. This header will be verified by the client -- whether it can be successfully decoded. Then it is encoded again and added to the request body sent to the oauth server. At the same time, the custom claim will also be part of the cache key.
 
 ### Reference-level explanation
 
